@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="피그앤헨 주얼리와 브랜드 이야기를 전하는 공식 수입사 저널입니다.">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>피그앤헨 이야기 | Pig &amp; Hen</title>
+    <link rel="preconnect" href="https://pigandhen.asia">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <div class="announcement">PIG &amp; HEN JOURNAL · SUPPLY ROUTE</div>
+    <header class="journal-header">
+      <a class="journal-brand" href="../index.html#home" aria-label="피그앤헨 홈">
+        <img src="https://pigandhen.asia/cdn/shop/files/pigandhen.svg?height=96&amp;v=1768827091" width="222" height="48" alt="Pig &amp; Hen">
+      </a>
+      <nav aria-label="저널 메뉴">
+        <a href="../index.html#stories">모든 이야기</a>
+        <a href="../index.html#products">제품 보기</a>
+      </nav>
+    </header>
+
+    <main id="main" class="journal-main">
+      <div class="journal-state" data-loading role="status">이야기를 불러오고 있습니다.</div>
+
+      <article data-article hidden>
+        <header class="article-hero">
+          <p class="eyebrow">Pig &amp; Hen journal</p>
+          <h1 data-title></h1>
+          <p class="article-intro" data-excerpt></p>
+          <div class="article-meta">
+            <span data-author></span>
+            <time data-date></time>
+          </div>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="글 탐색">
+            <span>JOURNAL</span>
+            <a href="../index.html#stories">← 이야기 목록</a>
+          </aside>
+          <div class="article-body" data-content></div>
+        </div>
+
+        <section class="article-faq" aria-labelledby="faq-title">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2 id="faq-title">관련 FAQ</h2>
+          <dl data-faq></dl>
+        </section>
+
+        <nav class="related-stories" aria-labelledby="related-title">
+          <p class="eyebrow">Continue reading</p>
+          <h2 id="related-title">다른 이야기</h2>
+          <div data-related></div>
+        </nav>
+      </article>
+
+      <section class="journal-error" data-error role="alert" hidden>
+        <p class="eyebrow">Story not found</p>
+        <h1>글을 불러오지 못했습니다.</h1>
+        <p data-error-message>주소를 다시 확인하거나 이야기 목록으로 돌아가 주세요.</p>
+        <a class="button button-dark" href="../index.html#stories">이야기 목록으로</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-logo" href="../index.html#home"><img src="https://pigandhen.asia/cdn/shop/files/logo-inverse.svg?v=1768897428&amp;width=240" width="59" height="48" alt="Pig &amp; Hen"></a>
+      <p>HANDMADE FROM AMSTERDAM</p>
+      <p>© <span data-year></span> PIG &amp; HEN</p>
+    </footer>
+  </body>
+</html>
