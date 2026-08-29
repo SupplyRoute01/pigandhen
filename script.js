@@ -55,21 +55,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
 
-const filters = [...document.querySelectorAll('.filter')];
-const catalogItems = [...document.querySelectorAll('.catalog-item')];
-
-const filterProducts = (selected, button) => {
-  filters.forEach((filter) => {
-    const active = filter === button;
-    filter.classList.toggle('is-active', active);
-    filter.setAttribute('aria-pressed', String(active));
-  });
-  catalogItems.forEach((item) => {
-    item.classList.toggle('is-hidden', selected !== 'all' && item.dataset.category !== selected);
-  });
-};
-
 window.toggleMenu = toggleMenu;
-window.filterProducts = filterProducts;
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
