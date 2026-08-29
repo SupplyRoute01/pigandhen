@@ -13,6 +13,11 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--white); color: var(--black); font-family: var(--body); font-size: 1rem; line-height: 1.55; overflow-x: hidden; }
+html { scrollbar-color: #777 var(--cloud); scrollbar-width: thin; }
+body::-webkit-scrollbar { width: 10px; }
+body::-webkit-scrollbar-track { background: var(--cloud); }
+body::-webkit-scrollbar-thumb { background: #777; border: 2px solid var(--cloud); }
+body::-webkit-scrollbar-thumb:hover { background: #4d4d4a; }
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; }
@@ -76,19 +81,23 @@ section[id] { scroll-margin-top: 108px; }
 .products { background: var(--cloud); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3.5rem; }
 .section-heading h2 { margin: 0; font-size: clamp(2.6rem, 4.8vw, 5rem); }
-.filters { display: flex; flex-wrap: wrap; gap: .35rem; }
-.filter { min-height: 42px; padding: .55rem .9rem; border: 1px solid var(--line); background: transparent; font-size: .68rem; cursor: pointer; }
-.filter:hover, .filter.is-active { border-color: var(--black); background: var(--black); color: var(--white); }
+.collection-meta { display: flex; flex-direction: column; align-items: flex-end; gap: .35rem; padding-bottom: .35rem; text-align: right; }
+.collection-meta strong { font-size: .68rem; letter-spacing: .12em; }
+.collection-meta span { color: var(--gray); font-size: .65rem; }
 .catalog { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2vw, 2rem); }
-.catalog-item { min-width: 0; }
-.catalog-item.is-hidden { display: none; }
+.catalog-item { min-width: 0; display: block; cursor: pointer; }
 .catalog-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #e5e5e2; }
 .catalog-image img { transition: transform .45s; }
 .catalog-image span { position: absolute; top: .65rem; left: .65rem; padding: .28rem .45rem; background: var(--black); color: var(--white); font-size: .5rem; font-weight: 700; letter-spacing: .1em; }
 .catalog-item:hover .catalog-image img { transform: scale(1.025); }
 .catalog-item > p { margin: 1rem 0 .15rem; color: var(--gray); font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.catalog-item h3 { margin: 0 0 .2rem; font-size: .98rem; font-weight: 600; }
-.catalog-item small { color: var(--gray); font-size: .69rem; }
+.catalog-item h3 { min-height: 3em; margin: 0 0 .7rem; font-size: .98rem; font-weight: 600; line-height: 1.45; word-break: keep-all; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .7rem; border-top: 1px solid var(--line); }
+.product-footer strong { font-size: .9rem; font-weight: 650; }
+.product-footer span { color: var(--gray); font-size: .64rem; white-space: nowrap; }
+.catalog-item:hover .product-footer span { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
+.collection-link { width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 4rem; padding: 1.2rem 0; border-top: 1px solid var(--black); border-bottom: 1px solid var(--black); font-size: .77rem; font-weight: 700; }
+.collection-link:hover { background: var(--black); color: var(--white); padding-inline: 1rem; }
 .placeholder-note { margin: 2.5rem 0 0; color: var(--gray); font-size: .68rem; }
 
 .craft { max-width: var(--page); margin: auto; display: grid; grid-template-columns: 1.15fr .85fr; min-height: 680px; background: var(--black); color: var(--white); }
@@ -152,8 +161,7 @@ section[id] { scroll-margin-top: 108px; }
   .about-copy { grid-column: auto; }
   .about-media { aspect-ratio: 4 / 5; }
   .section-heading { align-items: flex-start; flex-direction: column; }
-  .filters { width: 100%; }
-  .filter { flex: 1; }
+  .collection-meta { align-items: flex-start; text-align: left; }
   .catalog { grid-template-columns: repeat(2, 1fr); gap: 2.5rem .7rem; }
   .craft { grid-template-columns: 1fr; }
   .craft-media { min-height: 70svh; }
