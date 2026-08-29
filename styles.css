@@ -86,6 +86,7 @@ section[id] { scroll-margin-top: 108px; }
 .collection-meta span { color: var(--gray); font-size: .65rem; }
 .catalog { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2vw, 2rem); }
 .catalog-item { min-width: 0; display: block; cursor: pointer; }
+.catalog-item[hidden] { display: none; }
 .catalog-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #e5e5e2; }
 .catalog-image img { transition: transform .45s; }
 .catalog-image span { position: absolute; top: .65rem; left: .65rem; padding: .28rem .45rem; background: var(--black); color: var(--white); font-size: .5rem; font-weight: 700; letter-spacing: .1em; }
@@ -96,6 +97,12 @@ section[id] { scroll-margin-top: 108px; }
 .product-footer strong { font-size: .9rem; font-weight: 650; }
 .product-footer span { color: var(--gray); font-size: .64rem; white-space: nowrap; }
 .catalog-item:hover .product-footer span { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
+.catalog-progress { display: grid; place-items: center; gap: 1rem; margin-top: 4rem; }
+.catalog-progress p { margin: 0; color: var(--gray); font-size: .67rem; }
+.load-more { min-width: 220px; min-height: 50px; display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; padding: .75rem 1rem; border: 1px solid var(--black); background: transparent; font-size: .7rem; font-weight: 700; cursor: pointer; }
+.load-more:hover { background: var(--black); color: var(--white); }
+.load-more:active { transform: translateY(1px); }
+.load-more[hidden] { display: none; }
 .collection-link { width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 4rem; padding: 1.2rem 0; border-top: 1px solid var(--black); border-bottom: 1px solid var(--black); font-size: .77rem; font-weight: 700; }
 .collection-link:hover { background: var(--black); color: var(--white); padding-inline: 1rem; }
 .placeholder-note { margin: 2.5rem 0 0; color: var(--gray); font-size: .68rem; }
