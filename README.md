@@ -4,7 +4,7 @@
 
 ## 실행
 
-빌드 도구나 설치가 필요하지 않습니다. `index.html`을 브라우저에서 직접 열거나 간단한 정적 서버를 사용하세요.
+빌드 도구나 설치가 필요하지 않습니다. 블로그 상세 페이지가 JSON을 불러올 수 있도록 간단한 정적 서버를 사용하세요.
 
 ```bash
 python3 -m http.server 4173
@@ -18,7 +18,9 @@ python3 -m http.server 4173
 - `styles.css`: 반응형 레이아웃과 디자인 토큰
 - `script.js`: 모바일 메뉴, 섹션 표시, 제품 필터
 - `DESIGN.md`: 브랜드 디자인 시스템
-- `story/posts.json`: 블로그 글 본문과 FAQ 데이터
+- `story/index.html`: 블로그 상세 페이지
+- `story/styles.css`, `story/script.js`: 블로그 상세 화면과 JSON 렌더링
+- `story/posts.json`: 블로그 글 본문과 FAQ 원본 데이터
 
 ## 브랜드 자산
 
@@ -32,7 +34,6 @@ python3 -m http.server 4173
 
 ## 교체가 필요한 임시 정보
 
-- 블로그 글 제목, 날짜, 링크
 - 이메일과 인스타그램 계정
 
 ## 접근성
