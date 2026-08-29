@@ -19,7 +19,7 @@ python3 -m http.server 4173
 - `script.js`: 모바일 메뉴, 섹션 표시, 제품 필터
 - `DESIGN.md`: 브랜드 디자인 시스템
 - `story/index.html`: 블로그 상세 페이지
-- `story/styles.css`, `story/script.js`: 블로그 상세 화면과 JSON 렌더링
+- `story/styles.css`: 블로그 상세 화면 스타일
 - `story/posts.json`: 블로그 글 본문과 FAQ 원본 데이터
 
 ## 브랜드 자산
