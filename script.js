@@ -55,6 +55,33 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
 
+const catalogItems = [...document.querySelectorAll('.catalog-item')];
+const loadMoreButton = document.querySelector('[data-load-more]');
+const catalogStatus = document.querySelector('#catalog-status');
+const catalogPageSize = 24;
+let visibleProductCount = Math.min(catalogPageSize, catalogItems.length);
+
+const updateCatalog = () => {
+  catalogItems.forEach((item, index) => { item.hidden = index >= visibleProductCount; });
+  const complete = visibleProductCount >= catalogItems.length;
+  catalogStatus.textContent = complete
+    ? `전체 ${catalogItems.length}개 상품을 표시했습니다.`
+    : `${visibleProductCount}개 표시 중 · 전체 ${catalogItems.length}개`;
+  loadMoreButton.hidden = complete;
+  if (!complete) {
+    const nextCount = Math.min(catalogPageSize, catalogItems.length - visibleProductCount);
+    loadMoreButton.querySelector('span').textContent = `+${nextCount}`;
+  }
+};
+
+const showMoreProducts = () => {
+  visibleProductCount = Math.min(visibleProductCount + catalogPageSize, catalogItems.length);
+  updateCatalog();
+};
+
+updateCatalog();
+
 window.toggleMenu = toggleMenu;
+window.showMoreProducts = showMoreProducts;
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
