@@ -18,6 +18,7 @@ python3 -m http.server 4173
 - `styles.css`: 반응형 레이아웃과 디자인 토큰
 - `script.js`: 모바일 메뉴, 섹션 표시, 제품 필터
 - `DESIGN.md`: 브랜드 디자인 시스템
+- `story/posts.json`: 블로그 글 본문과 FAQ 데이터
 
 ## 브랜드 자산
 
